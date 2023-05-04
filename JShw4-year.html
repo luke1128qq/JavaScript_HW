@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>平年閏年判斷</title>
+</head>
+
+<body>
+
+    <!-- 西元除以400可整除，為閏年。
+西元除以4可整除但除以100不可整除，為閏年。
+西元除以4不可整除，為平年。
+西元除以100可整除但除以400不可整除，為平年 -->
+
+    <script>
+        while (true) {
+            y = Number(prompt("請輸入西元年份"));
+
+            if (y < 0 || y % 1 !== 0 || isNaN(y)) {
+                window.alert(`輸入錯誤，請重新輸入`)
+                break;
+            }
+
+            else if ((y % 4 === 0 && y % 100 !== 0) || y % 400 === 0) {
+                window.alert(`${y}是閏年`)
+                break;
+            }
+
+            else {
+                window.alert(`${y}是平年`)
+                break;
+            }
+        }
+    </script>
+
+</body>
+
+</html>

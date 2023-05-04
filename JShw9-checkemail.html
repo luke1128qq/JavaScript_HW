@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>檢查信箱</title>
+</head>
+
+<body>
+
+    <h1>電子信箱檢查</h1>
+    <input type="text" id="text" placeholder="請輸入您的Email">
+
+    <script>
+
+        document.getElementById("text").addEventListener("blur", () => {
+
+            let email = document.getElementById("text").value;
+
+            if (email.indexOf("@") === -1 || email.indexOf("@") != email.lastIndexOf("@") || email.indexOf(".") === -1 ) {
+                alert("格式錯誤");
+            }
+        })
+
+
+    </script>
+
+</body>
+
+</html>

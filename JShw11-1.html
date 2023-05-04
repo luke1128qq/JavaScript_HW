@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>密碼檢查</title>
+</head>
+
+<body>
+    <input type="text" id="idInp" placeholder="請輸入您的密碼">
+    <span id="idSp"></span>
+    <script>
+        let t = document.getElementById("idInp");
+
+        t.addEventListener("blur", () => {
+            let re = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\da-zA-Z]).{8,}$/;
+            let ans = re.test(t.value);
+            console.log(ans);
+
+            let a = document.getElementById("idSp")
+
+            if (ans == true) {
+
+                a.innerHTML = "格式正確"
+            }
+
+            else {
+
+                a.innerHTML = "格式錯誤"
+            }
+
+        });
+
+//密碼驗證條件  8位數以上
+//至少包含一個大寫字母、小寫字母、數字、符號
+    </script>
+</body>
+
+</html>

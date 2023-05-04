@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>溫度換算</title>
+    <style>
+        body {
+            padding: 10px;
+        }
+
+        form {
+            display: flex;
+        }
+
+        .d1 {
+            margin: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .d1>div {
+            margin-left: 20px;
+        }
+
+        .d1>h3 {
+            margin-right: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="h1">溫度轉換</h1>
+
+    <form action="">
+
+        <div class="d1">
+            <h3>攝氏 (°C)</h3>
+            <input type="text" id="temC" placeholder="0 °C">
+            <div><input type="button" id="buttonC" value="攝氏轉華氏"></div>
+        </div>
+
+        <div class="d1">
+            <h3>華氏 (°F)</h3>
+            <input type="text" id="temF" placeholder="0 °F">
+            <div><input type="button" id="buttonF" value="華氏轉攝氏"></div>
+        </div>
+
+
+    </form>
+
+    <script>
+
+        document.getElementById("buttonC").addEventListener("click", () => {
+
+            let C = document.getElementById("temC").value;
+
+            let F = document.getElementById("temF").value;
+
+            document.getElementById("temF").value = Math.floor(C * 9 / 5 + 32);
+
+        })
+
+        document.getElementById("buttonF").addEventListener("click", () => {
+
+            let C = document.getElementById("temC").value;
+
+            let F = document.getElementById("temF").value;
+
+            document.getElementById("temC").value = Math.floor((F - 32) * 5 / 9);
+
+        })
+
+        // document.getElementById("buttonC").addEventListener("click", () => {
+
+        //     let C = document.getElementById("temC").value;
+
+        //     let F = document.getElementById("temF").value;
+
+        //     if (String(C).length > String(F).length) {
+
+        //         document.getElementById("temF").value = Math.floor(C * 9 / 5 + 32);
+
+        //     }
+
+        //     else {
+        //         document.getElementById("temC").value = Math.floor((F - 32) * 5 / 9);
+        //     }
+        // })
+
+
+
+
+
+    </script>
+</body>
+
+</html>

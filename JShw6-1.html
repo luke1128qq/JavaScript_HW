@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bmi計算機function版</title>
+</head>
+
+<body>
+
+
+    <script>
+
+        function Bmi(height, weight) {
+
+            let h = Number(height) / 100;
+            let w = Number(weight);
+            let b = w / (h ** 2);
+            let bmi = Number(b.toFixed(2));
+
+            if (isNaN(bmi) || bmi < 0) {
+                window.alert(`輸入錯誤,請重新輸入`)
+            }
+
+            else if (bmi < 18.5) {
+                window.alert(`您的bmi是${bmi},體重過輕`)
+            }
+
+            else if (bmi < 24) {
+                window.alert(`您的bmi是${bmi},體重正常`)
+            }
+
+            else if (bmi < 27) {
+                window.alert(`您的bmi是${bmi},體重過重`)
+            }
+
+            else if (bmi < 30) {
+                window.alert(`您的bmi是${bmi},輕度肥胖`)
+            }
+
+            else if (bmi < 35) {
+                window.alert(`您的bmi是${bmi},中度肥胖`)
+            }
+
+            else if (bmi >= 35) {
+                window.alert(`您的bmi是${bmi},重度肥胖`)
+            }
+
+        }
+
+
+        Bmi("175", "68");
+
+    </script>
+</body>
+
+</html>

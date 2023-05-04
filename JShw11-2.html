@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>信箱檢查</title>
+</head>
+
+<body>
+    <input type="text" id="idInp" placeholder="請輸入您的信箱">
+    <span id="idSp"></span>
+
+    <script>
+
+        let t = document.getElementById("idInp");
+
+        t.addEventListener("blur", () => {
+            let re = /^[\w-]+(\.[\w-]+)*@[\w-]+(\.[\w-]+)+$/;
+            let ans = re.test(t.value);
+            console.log(ans);
+
+            let a = document.getElementById("idSp")
+
+            if (ans == true) {
+
+                a.innerHTML = "格式正確"
+            }
+
+            else {
+
+                a.innerHTML = "格式錯誤"
+            }
+
+        });
+
+
+
+
+    </script>
+
+</body>
+
+</html>

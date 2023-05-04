@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>九九乘法表</title>
+    <style>
+        td {
+            background-color: #ffd2d2;
+            width: 100px;
+            height: 80px;
+            text-align: center;
+        }
+
+
+        tr {
+            background-color: #5f87ff;
+        }
+
+        table {
+            border: 2px solid rgb(82, 82, 82);
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+
+        <th>一</th>
+        <th>二</th>
+        <th>三</th>
+        <th>四</th>
+        <th>五</th>
+        <th>六</th>
+        <th>七</th>
+        <th>八</th>
+        <th>九</th>
+
+        <tr id="go">
+        </tr>
+
+    </table>
+
+    <script>
+        let aa = document.getElementById("go")
+
+        for (let row = 1; row <= 9; row++) {
+            let result = "";
+            for (let col = 1; col <= 9; col++) {
+                result += (`<br>${row}x${col}=${row * col}<br><br>`)
+            }
+            aa.innerHTML += `<td>${result}</td>`;
+        }
+    </script>
+</body>
+
+</html>

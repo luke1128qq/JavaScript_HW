@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>猜數字遊戲</title>
+</head>
+
+<body>
+    <script>
+
+        function Guess() {
+
+            let ans = parseInt(Math.random() * 100);
+            console.log(ans);
+
+            while (true) {
+            num = Number(prompt("請輸入猜測的數字(1~100)，輸入0離開遊戲"))
+
+            if (num > 100 || num < 0 || num % 1 !== 0 || isNaN(num)) {
+                window.alert("輸入內容錯誤")
+            }
+
+            else if (num === ans) {
+                window.alert("恭喜答對")
+                break;
+            }
+
+            else if (num === 0) {
+                window.alert("遊戲結束")
+                break;
+            }
+
+            else if (num > ans) {
+                window.alert("數字太大")
+            }
+
+            else if (num < ans) {
+                window.alert("數字太小")
+            }
+        } 
+    
+    }
+            
+
+        Guess();
+
+    </script>
+
+</body>
+
+</html>

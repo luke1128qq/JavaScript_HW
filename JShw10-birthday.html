@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>計算幾歲</title>
+</head>
+
+<body>
+    <form>
+        <label for="you">出生年月日</label>
+        <input id="you" type="date">
+        <input type="button" value="今年幾歲" id="old">
+    </form>
+
+
+    <script>
+
+        document.getElementById("old").addEventListener("click", () => {
+
+            let you = document.getElementById("you").value;
+            let yea1 = Number(new Date().getFullYear());
+            let mon1 = Number(new Date().getMonth()) + 1;
+            let day1 = Number(new Date().getDate());
+            let yea2 = Number(you[0] + you[1] + you[2] + you[3]);
+            let mon2 = Number(you[5] + you[6]);
+            let day2 = Number(you[8] + you[9]);
+            let ans1 = yea1 - yea2;
+            let ans2 = mon1 - mon2;
+            let ans3 = day1 - day2;
+
+            if (ans2 > 0 || (ans2 === 0 && ans3 >= 0)) {
+                alert(`你今年${ans1}歲`)
+            }
+
+            else {
+                alert(`你今年${ans1 - 1}歲`)
+            }
+
+        })
+
+    </script>
+</body>
+
+</html>
